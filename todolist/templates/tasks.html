@@ -1,3 +1,5 @@
 {% for task in tasks %}
     <p>{{ task }}</p>
 {% endfor %}
+
+<form method="post">{% csrf_token %}Task:<input type="text" name="task"><input type="submit" value="Submit"></form>
