@@ -16,7 +16,7 @@ def tasks(request):
         account_SID='AC29a92553fae2bfdf83a2ec5e09bfec87'
         auth_token='a437cf3cf441bd04cfbb31ef858f03bf'
         client=TwilioRestClient(account_SID,auth_token)
-        message = client.messages.create(body="Congrats, you added the following task: {}".format(task_description),
+        client.messages.create(body="Congrats, you added the following task: {}".format(task_description),
             to=phone_number,
             from_="+16467627640" )       
     return render(request, template_name, context)
